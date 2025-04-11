@@ -8,3 +8,7 @@ table{
     min-width: 800px;
     border-collapse: collapse;
 }
+
+a{
+    color: #fff !important;
+}
