@@ -16,8 +16,9 @@ export default function ClientsPage() {
     }, [clients])
 
     const handleSearch = (value: string) => {
+        const normalize = (str: string) => str.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
         const filtered = clients.filter(client =>
-            client.nome.toLowerCase().includes(value.toLowerCase()) ||
+            normalize(client.nome).toLowerCase().includes(normalize(value).toLowerCase()) ||
             client.cpfCnpj.includes(value)
         )
         setFilteredClients(filtered)
