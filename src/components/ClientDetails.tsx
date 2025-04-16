@@ -44,6 +44,9 @@ export default function ClientDetails({ client, contas, agencia }: ClientDetails
                     <p><strong>Email:</strong> {client.email}</p>
                     <p><strong>RG:</strong> {client.rg}</p>
                     <p><strong>Data de nascimento:</strong> {new Date(client.dataNascimento).toLocaleDateString('pt-BR')}</p>
+                    { client.nomeSocial && (
+                        <p><strong>Nome Social:</strong> {client.nomeSocial}</p>
+                    )}
                     <p><strong>Endereço:</strong> {client.endereco}</p>
                     <p><strong>Renda:</strong> {formatCurrency(Number(client.rendaAnual))}</p>
                     <p><strong>Patrimônio:</strong> {formatCurrency(Number(client.patrimonio))}</p>
