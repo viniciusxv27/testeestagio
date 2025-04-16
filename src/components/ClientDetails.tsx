@@ -42,7 +42,9 @@ export default function ClientDetails({ client, contas, agencia }: ClientDetails
                     <p><strong>Nome:</strong> {client.nome}</p>
                     <p><strong>CPF/CNPJ:</strong> {formatCpfCnpj(client.cpfCnpj)}</p>
                     <p><strong>Email:</strong> {client.email}</p>
-                    <p><strong>RG:</strong> {client.rg}</p>
+                    { client.rg && (
+                        <p><strong>RG:</strong> {client.rg}</p>
+                    )}
                     <p><strong>Data de nascimento:</strong> {new Date(client.dataNascimento).toLocaleDateString('pt-BR')}</p>
                     { client.nomeSocial && (
                         <p><strong>Nome Social:</strong> {client.nomeSocial}</p>
